@@ -1,16 +1,5 @@
 def overlapping_area(detection_1, detection_2):
-    '''
-    Function to calculate overlapping area'si
-    `detection_1` and `detection_2` are 2 detections whose area
-    of overlap needs to be found out.
-    Each detection is list in the format ->
-    [x-top-left, y-top-left, confidence-of-detections, width-of-detection, height-of-detection]
-    The function returns a value between 0 and 1,
-    which represents the area of overlap.
-    0 is no overlap and 1 is complete overlap.
-    Area calculated from ->
-    http://math.stackexchange.com/questions/99565/simplest-way-to-calculate-the-intersect-area-of-two-rectangles
-    '''
+    
     # Calculate the x-y co-ordinates of the 
     # rectangles
     x1_tl = detection_1[0]
@@ -31,15 +20,7 @@ def overlapping_area(detection_1, detection_2):
     return overlap_area / float(total_area)
 
 def nms(detections, threshold=.5):
-    '''
-    This function performs Non-Maxima Suppression.
-    `detections` consists of a list of detections.
-    Each detection is in the format ->
-    [x-top-left, y-top-left, confidence-of-detections, width-of-detection, height-of-detection]
-    If the area of overlap is greater than the `threshold`,
-    the area with the lower confidence score is removed.
-    The output is a list of detections.
-    '''
+   
     if len(detections)==0:
         return []
         
